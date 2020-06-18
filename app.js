@@ -14,16 +14,16 @@ mongoose.set('useFindAndModify', false)
 // mongoose.connect('mongodb://localhost:27017/Capstone_3')
 /*Database Connection*/
 mongoose.connect('mongodb+srv://mickoangelolacap:85452565@cluster0-gsn9d.mongodb.net/Capstone_3?retryWrites=true&w=majority')
-//   .then(() => {
-//     app.listen(PORT,()=>{
-//       console.info(`MongoDB Connected!`);
-//       console.log(`CORS-enabled web server listening on port ${PORT}`); 
-//       console.info(`Listening to PORT: ${PORT}`);
-//     });
-//   })
-//   .catch(err => {
-//     console.log(err);
-// });
+  .then(() => {
+    app.listen(PORT,()=>{
+      console.info(`MongoDB Connected!`);
+      console.log(`CORS-enabled web server listening on port ${PORT}`); 
+      console.info(`Listening to PORT: ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.log(err);
+});
 
 /*Middlewares*/
 app.use(cors())
@@ -32,7 +32,9 @@ app.use(cors())
 app.use('/graphql', graphqlHTTP({ schema: graphqlSchema, graphiql: true }))
 
 
+let port = process.env.PORT || 4000
+
 /*Server Initialization*/
-app.listen(4000, ()=>{
-	console.log('Now serving on port 4000')
+app.listen(port, ()=>{
+	console.log('Now serving on port ' + port)
 })

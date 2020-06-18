@@ -11,9 +11,9 @@ mongoose.set('useUnifiedTopology', true)
 mongoose.set('useFindAndModify', false)
 
 /*Database Connection*/
-mongoose.connect('mongodb://localhost:27017/Capstone_3')
+// mongoose.connect('mongodb://localhost:27017/Capstone_3')
 /*Database Connection*/
-// mongoose.connect('mongodb+srv://mickoangelolacap:85452565@cluster0-gsn9d.mongodb.net/Capstone_3?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://mickoangelolacap:85452565@cluster0-gsn9d.mongodb.net/Capstone_3?retryWrites=true&w=majority')
 //   .then(() => {
 //     app.listen(PORT,()=>{
 //       console.info(`MongoDB Connected!`);
